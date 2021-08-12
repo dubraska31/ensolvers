@@ -1,5 +1,6 @@
 package com.ensolvers.exercise.model;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -26,7 +27,7 @@ public class Task {
 	private boolean completed;
 
 	@JsonBackReference
-	@ManyToOne()
+	@ManyToOne(cascade = CascadeType.MERGE)
 	@JoinColumn(name = "id_folder")
 	private Folder folder;
 

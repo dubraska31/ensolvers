@@ -28,7 +28,7 @@ public class Folder {
 	private String folderDescription;
 
 	@JsonManagedReference
-	@OneToMany(mappedBy = "folder", targetEntity = Task.class, fetch = FetchType.EAGER)
+	@OneToMany(mappedBy = "folder", cascade = CascadeType.REMOVE)
 	private List<Task> task = new ArrayList<>();
 
 	public long getIdFolder() {
